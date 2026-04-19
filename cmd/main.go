@@ -6,17 +6,8 @@ import (
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/cors"
 	"github.com/rafi021/go-fiber-blog/database"
+	"github.com/rafi021/go-fiber-blog/router"
 )
-
-func SetUpRoutes(app *fiber.App) error {
-	api := app.Group("/api/v1")
-
-	api.Get("/health", func(c fiber.Ctx) error {
-		return c.SendString("Fiber APP is running......")
-	})
-
-	return nil
-}
 
 func main() {
 
@@ -28,7 +19,7 @@ func main() {
 	app.Use(cors.New())
 
 	// Set up routes
-	SetUpRoutes(app)
+	router.SetUpRoutes(app)
 
 	// Start the server
 	log.Fatal(app.Listen(":8000"))
