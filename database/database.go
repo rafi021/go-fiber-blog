@@ -32,7 +32,7 @@ func ConnectDB() {
 	)
 
 	// Debugging line
-	fmt.Printf("Attempting connection with DSN: %s\n", dsn)
+	// fmt.Printf("Attempting connection with DSN: %s\n", dsn)
 
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
