@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/rafi021/go-fiber-blog/config"
+	"github.com/rafi021/go-fiber-blog/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -39,6 +40,6 @@ func ConnectDB() {
 	}
 
 	fmt.Println("Connection Opened to Database")
-	// DB.AutoMigrate(&model.Product{}, &model.User{})
+	DB.AutoMigrate(&model.Product{}, &model.User{})
 	fmt.Println("Database Migrated")
 }
