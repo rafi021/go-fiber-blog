@@ -16,9 +16,10 @@ func SetUpRoutes(app *fiber.App) {
 	api.Get("/health", controller.HealthCheck)
 
 	// Auth
-	// auth := api.Group("/auth")
-	// auth.Post("/register", Register)
-	// auth.Post("/login", Login)
+	auth := api.Group("/auth")
+	auth.Post("/register", controller.Register)
+	auth.Post("/login", controller.Login)
+	auth.Post("/logout", controller.Logout)
 
 	// // Product routes
 	// api.Get("/products", GetProducts)
